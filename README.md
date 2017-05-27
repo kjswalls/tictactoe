@@ -1,2 +1,2 @@
-# pomodoro
-Pomodoro clock for FreeCodeCamp
+# tictactoe
+Tic Tac Toe for FreeCodeCamp
