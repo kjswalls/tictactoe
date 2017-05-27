@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Doodle</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/css/reset.css" />
+        <link rel="stylesheet" href="/public/css/styles.css" />
+        <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="https://use.fontawesome.com/85d6f4658a.js"></script>
+        <script src="/public/js/scripts.js"></script>
+    </head>
+    <body>
+        <div class="title-txt">
+            <p class="o-color">X</p>
+            <p class="x-color">O</p>
+            <p class="draw-color"><img class="kiss" src="http://www.emoji.co.uk/files/google-emojis/smileys-people-android/7351-kiss.png" /></p>
+            <div class="draw-color author">by <a href="http://kjswalls.com">kirby walls</a></div>
+        </div>
+        <div class="container">
+            <div class="scoreboard">
+                <div class="o-wins">
+                    <p class="o-color icon">O</p>
+                    <p class="o-color">4 wins</p>
+                </div>
+                <div class="x-wins">
+                    <p class="x-color icon">X</p>
+                    <p class="x-color">2 wins</p>
+                </div>
+                <div class="draws">
+                    <p class="draw-color icon">D</p>
+                    <p class="draw-color">2 draws</p>
+                </div>
+            </div>
+            <table class="board">
+                <tr>
+                    <td class="top left" id="0"></td>
+                    <td class="top mid" id="1"></td>
+                    <td class="top right x-color" id="2">X</td>
+                </tr>
+                <tr>
+                    <td class="left" id="3"></td>
+                    <td id="4" class="o-color">O</td>
+                    <td class="right" id="5"></td>
+                </tr>
+                <tr>
+                    <td class="bot left x-color" id="6">X</td>
+                    <td class="bot mid" id="7"></td>
+                    <td class="bot right" id="8"></td>
+                </tr>
+            </table>
+            <div class="turn-container">
+                <div class="turn">
+                    <label class="switch">
+                        <input type="checkbox" value="x" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="reset btn-gray"><span class="fa fa-refresh"></span></button>
+                <button class="mode btn-mode">1 player</button>
+                <button class="token btn-gray"><span class="fa fa-exchange"></span></button>
+            </div>
+        </div>
+    </body>
+</html>

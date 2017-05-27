@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Baloo Bhaina', sans-serif;
+    font-size: 0.8em;
+}
+
+.title-txt {
+    float: left;
+    margin-left: 15%;
+    font-size: 10rem;
+    opacity: .4;
+    z-index: -1;
+}
+
+.title-txt p {
+    margin: 0 auto;
+    line-height: 180px;
+}
+
+.kiss {
+    width: 100px;
+    height: 100px;
+}
+
+.author {
+    font-size: 1rem;
+    line-height: 10px;
+}
+
+.author a {
+    text-decoration: none;
+    color: #A4ADAE;
+    transition: all .5s;
+}
+
+.author a:hover {
+    color: #000;
+}
+
+.container {
+    width: 300px;
+    margin: 5% auto 0;
+    text-align: center;
+    border: 2px solid #49C8D0;
+    /*border-radius: 10px;*/
+    -webkit-box-shadow: 10px 10px 34px -10px rgba(73,200,208,0.42);
+    -moz-box-shadow: 10px 10px 34px -10px rgba(73,200,208,0.42);
+    box-shadow: 10px 10px 34px -10px rgba(73,200,208,0.42);
+}
+
+.scoreboard {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon {
+    font-size: 1.4rem;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.o-color {
+    color: #32BDD0;
+}
+
+.x-color {
+    color: #2E8DE1;
+}
+
+.draw-color {
+    color: #A4ADAE;
+}
+
+.board {
+    margin: 40px auto;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 2.5rem;
+    border-collapse: collapse;
+}
+
+td {
+    border: 2px solid #E6E7E5;
+    height: 75px;
+    width: 75px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.top {
+    border-top: none;
+}
+
+.left {
+    border-left: none;
+}
+
+.right {
+    border-right: none;
+}
+
+.bot {
+    border-bottom: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 35px;
+}
+
+/* hide the default html checkbox */
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #32BDD0;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    border-radius: 35px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "X";
+    color: #fff;
+    vertical-align: middle;
+    font-size: 1rem;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #2E8DE1;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.slider:after {
+    position: absolute;
+    content: "O";
+    font-size: 1rem;
+    color: #32BDD0;
+    height: 26px;
+    width: 26px;
+    right: 4px;
+    bottom: 4px;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    content: "O";
+    background-color: #32BDD0;
+}
+
+input:checked + .slider:after {
+  -webkit-transform: translateX(-24px);
+  -ms-transform: translateX(-24px);
+  transform: translateX(-24px);
+  content: "X";
+  color: #2E8DE1;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto 40px;
+}
+
+button {
+    font-family: 'Baloo Bhaina', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a6885;
+    color: #fff;
+}
+
+button:focus {
+    outline: none;
+}
+
+.btn-gray:active {
+    background-color: #fff;
+    color: #A4B0B0;
+}
+
+.btn-gray {
+    border-radius: 50%;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: #A4B0B0;
+    border: 3px solid white;
+    color: #fff;
+    position: relative;
+    padding: 5%;
+    font-size: 1rem;
+    line-height: 20px;
+}
+
+.btn-gray:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  /*width: 55px;*/
+  /*height: 55px;*/
+  background: #A4B0B0;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.btn-mode {
+   background-color: #fff;
+   color: #A4B0B0;
+   border: 2px solid #A4B0B0;
+   border-radius: 10px;
+   width: 80px;
+   height: 40px;
+   margin: auto 0;
+}
+
+.btn-mode:active {
+    background-color: #A4B0B0;
+    color: #fff;
+}
+
+
