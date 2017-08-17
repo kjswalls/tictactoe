@@ -7,29 +7,38 @@
         <link rel="stylesheet" href="/public/css/styles.css" />
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
         <script src="https://use.fontawesome.com/85d6f4658a.js"></script>
-        <script src="/public/js/scripts.js"></script>
+        
+        <script src="/public/js/gameController.js"></script>
+        <script src="/public/js/board.js"></script>
+        <script src="/public/js/humanPlayer.js"></script>
+        <script src="/public/js/computerPlayer.js"></script>
+        <script src="/public/js/interface.js"></script>
+        <script src="/public/js/app.js"></script>
     </head>
     <body>
         <div class="title-txt">
-            <p class="o-color">X</p>
-            <p class="x-color">O</p>
-            <p class="draw-color"><img class="kiss" src="http://www.emoji.co.uk/files/google-emojis/smileys-people-android/7351-kiss.png" /></p>
-            <div class="draw-color author">by <a href="http://kjswalls.com">kirby walls</a></div>
+            <p class="o-color">X <span class="assignment" id="xAssign">: human</span></p>
+            <p class="x-color">O <span class="assignment" id="oAssign">: AI</span></p>
+            <!--<p class="draw-color"><img class="kiss" src="http://www.emoji.co.uk/files/google-emojis/smileys-people-android/7351-kiss.png" /></p>-->
+            <!--<div class="draw-color author">by <a href="http://kjswalls.com">kirby walls</a></div>-->
         </div>
         <div class="container">
             <div class="scoreboard">
                 <div class="o-wins">
                     <p class="o-color icon">O</p>
-                    <p class="o-color">4 wins</p>
+                    <p class="o-color" id="oWins">0 wins</p>
                 </div>
                 <div class="x-wins">
                     <p class="x-color icon">X</p>
-                    <p class="x-color">2 wins</p>
+                    <p class="x-color" id="xWins">0 wins</p>
                 </div>
                 <div class="draws">
                     <p class="draw-color icon">D</p>
-                    <p class="draw-color">2 draws</p>
+                    <p class="draw-color" id="draws">0 draws</p>
                 </div>
+            </div>
+            <div class="display">
+                <p id="msg"></p>
             </div>
             <table class="board">
                 <tr>
@@ -39,7 +48,7 @@
                 </tr>
                 <tr>
                     <td class="left" id="3"></td>
-                    <td id="4" class="o-color">O</td>
+                    <td class="o-color" id="4">O</td>
                     <td class="right" id="5"></td>
                 </tr>
                 <tr>
@@ -51,15 +60,15 @@
             <div class="turn-container">
                 <div class="turn">
                     <label class="switch">
-                        <input type="checkbox" value="x" />
+                        <input id="turnSlider" type="checkbox" value="x" />
                         <div class="slider round"></div>
                     </label>
                 </div>
             </div>
             <div class="controls">
-                <button class="reset btn-gray"><span class="fa fa-refresh"></span></button>
-                <button class="mode btn-mode">1 player</button>
-                <button class="token btn-gray"><span class="fa fa-exchange"></span></button>
+                <button class="reset btn-gray" id="reset" title="Reset"><span class="fa fa-refresh"></span></button>
+                <button class="mode btn-mode" id-"changeMode" title="Change mode">2 player</button>
+                <button class="token btn-gray" id="switchTile" title="Switch tile"><span class="fa fa-exchange"></span></button>
             </div>
         </div>
     </body>

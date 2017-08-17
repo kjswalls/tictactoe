@@ -20,6 +20,11 @@ body {
     line-height: 180px;
 }
 
+.assignment {
+    font-size: 2rem;
+    vertical-align: top;
+}
+
 .kiss {
     width: 100px;
     height: 100px;
@@ -42,7 +47,7 @@ body {
 
 .container {
     width: 300px;
-    margin: 5% auto 0;
+    margin: 3% auto 0;
     text-align: center;
     border: 2px solid #49C8D0;
     /*border-radius: 10px;*/
@@ -52,7 +57,7 @@ body {
 }
 
 .scoreboard {
-    margin: 20px 0;
+    margin: 20px 0 15px;
     display: flex;
     justify-content: space-around;
 }
@@ -74,8 +79,12 @@ body {
     color: #A4ADAE;
 }
 
+.display p {
+    height: 26px;
+}
+
 .board {
-    margin: 40px auto;
+    margin: 20px auto 40px;
     font-family: 'Fredoka One', sans-serif;
     font-size: 2.5rem;
     border-collapse: collapse;
@@ -87,6 +96,10 @@ td {
     width: 75px;
     text-align: center;
     vertical-align: middle;
+}
+
+td:hover {
+    cursor: pointer;
 }
 
 .top {
@@ -184,7 +197,7 @@ input:checked + .slider:after {
 .controls {
     display: flex;
     justify-content: space-around;
-    margin: 30px auto 40px;
+    margin: 30px auto 30px;
 }
 
 button {
