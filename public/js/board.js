@@ -9,7 +9,7 @@
     
     Board.prototype.placeTile = function(turn, index) {
         // check to see if the tile is empty
-        if (this.grid[index] !== 'E') {
+        if (this.grid[index] === 'E') {
             this.grid[index] = turn;
         }
     };
@@ -37,6 +37,10 @@
         function checkDiags() {
             return checkSequence(grid[0], grid[4], grid[8]) ||
             checkSequence(grid[2], grid[4], grid[6]); 
+        }
+        
+        function checkFull() {
+            return this.grid.every(i => i === 'X' || i === 'O');
         }
         
         return checkRows() || checkColumns() || checkDiags();

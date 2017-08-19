@@ -6,6 +6,6 @@
         this.tile = 'O';
     }
     
-    ComputerPlayer.prototype.makeMove = function(game, board, ui) {
+    ComputerPlayer.prototype.makeMove = function(game, board, id, ui) {
       // Minimax  
     };

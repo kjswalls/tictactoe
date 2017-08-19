@@ -25,15 +25,26 @@
     };
     
     Interface.prototype.updateMode = function(players) {
+        console.log('changd');
         $('#changeMode').text(`${players} player`);
     };
     
     Interface.prototype.updateBoard = function(grid) {
-       console.log(grid);
        for (let i = 0; i < grid.length; i++) {
-           if (grid[i] !== 'E') {
-            $(`#${i}`).text(grid[i]);               
-           }
+            if (grid[i] !== 'E') {
+                const turn = grid[i];
+                const $cell = $(`#${i}`); 
+                $cell.text(turn).addClass(`${turn}-color`.toLowerCase()); 
+                if (turn === 'X') {
+                    $cell.removeClass(`o-color`);
+                }
+                else {
+                    $cell.removeClass(`x-color`);
+                }
+            }
+            else {
+                $(`#${i}`).text('');
+            }
        } 
     };
     

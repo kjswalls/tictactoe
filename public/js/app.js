@@ -20,23 +20,24 @@ $(function() {
         ui.reset(gameState);
     }
     
-    function makeMove(turn) {
+    function makeMove(turn, id) {
     // check if it's the human's turn
         if (game[turn] === 'human') {
-            human.makeMove(game, board, ui);
+            human.makeMove(game, board, id, ui);
         }
         else {
             // if it's the computer's turn
-            ai.makeMove(game, board, ui);
+            ai.makeMove(game, board, id, ui);
         }
-        
-        // after move is made, advance the turn
-        game.advanceTurn();
         
         // check if terminal
         if (board.isTerminal()) {
             endGame();
         }
+        
+        // advance the turn
+        game.advanceTurn();
+        ui.updateTurn();
     }
     
     function endGame() {
@@ -72,24 +73,28 @@ $(function() {
         e.preventDefault();
     });
     
-    // check if it's multiplayer
-    if (game.players === 2) {
+    $('td').on('click', function(e) {
+        const id = e.target.id;
         
-        // check whose turn it is
-        if (game.turn === 'X') {
-          makeMove('X');
+        // check if it's multiplayer
+        if (game.players === 2) {
+            
+            // check whose turn it is
+            if (game.turn === 'X') {
+                makeMove('X', id);
+            }
+            else {
+                // if it's O's turn
+                makeMove('O', id);
+            }
         }
         else {
-         // if it's O's turn
-         makeMove('O');
+            // if it's single player
+            game.X = 'human';
+            game.O = 'human';
+            
+            // listen for human moves
+            makeMove(game.turn, id);
         }
-    }
-    else {
-        // if it's single player
-        game.X = 'human';
-        game.O = 'human';
-        
-        // listen for human moves
-        makeMove(game.turn);
-    }
+    });
 })

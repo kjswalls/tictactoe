@@ -2,14 +2,12 @@
     // GAME STATE
     //*
     
-    /* global $ */
-    
     function Game() {
         this.turn = 'X';
         this.oWins = 0;
         this.xWins = 0;
         this.draws = 0;
-        this.players = 2;
+        this.players = 1;
         this.X = 'human';
         this.O = 'AI';
     }
@@ -48,9 +46,6 @@
     
     Game.prototype.reset = function() {
         this.turn = 'X';
-        this.oWins = 0;
-        this.xWins = 0;
-        this.draws = 0;
     };
     
     Game.prototype.switchTile = function() {
